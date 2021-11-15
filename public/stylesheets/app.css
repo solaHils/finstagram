@@ -26,7 +26,8 @@ main {
 }
 
 h1 {
-    font-family: 'Tangerine', serif;
+    /* font-family: 'Tangerine', serif; */
+    font-family: 'ALLURA', serif;
     font-size: 64px;
     margin: 2px;
 }

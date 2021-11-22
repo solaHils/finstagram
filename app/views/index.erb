@@ -1,0 +1,23 @@
+<% @cutestagram_posts.each do |cutestagram_post| %>
+    <article class="cutestagram-post">
+        <div class="user-info">
+            <img src="<%= cutestagram_post[:avatar_url] %>" alt="<%= cutestagram_post[:username] %>">
+            <h2><%= cutestagram_post[:username] %></h2>
+            <h3><%= cutestagram_post[:humanized_time_ago] %></h3>
+        </div>
+        <a class="photo" href="#">
+            <img class="photo-rounded-corner" src="<%= cutestagram_post[:photo_url] %>" alt="cutestagram post from <%= cutestagram_post[:username] %>">
+        </a>
+        <div class="actions">
+            <%= cutestagram_post[:like_count] %> likes
+            <span class="comment-count"><%= cutestagram_post[:comment_count] %> comments</span>
+        </div>
+        <ul class="comments">
+            <li>
+                <p>
+                    <%= cutestagram_post[:comments][0][:username] %>: <%= cutestagram_post[:comments][0][:text] %>
+                </p>
+            </li>
+        </ul>
+    </article>
+<% end %> 

@@ -5,7 +5,7 @@ header {
 
 body {
     background-color: rgb(240, 234, 234);
-    font-family: 'Yuji Boku', serif;
+    font-family: 'Saira Condensed', sans-serif;
 }
 
 main {
@@ -26,8 +26,7 @@ main {
 }
 
 h1 {
-    /* font-family: 'Tangerine', serif; */
-    font-family: 'ALLURA', serif;
+    font-family: 'Patrick Hand', cursive;
     font-size: 64px;
     margin: 2px;
 }

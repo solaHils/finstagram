@@ -1,5 +1,4 @@
 get '/' do
-
     @cutestagram_posts = CutestagramPost.order(created_at: :desc)
     erb(:index)
 end

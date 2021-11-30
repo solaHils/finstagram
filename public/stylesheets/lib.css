@@ -14,8 +14,8 @@ a {
 }
 
 label {
-  display: block;
-  margin-bottom: .25em;
+  /* display: block; */
+  /* margin-bottom: .25em; */
 }
 
 input[type=text], input[type=password], input[type=email] {
@@ -113,10 +113,19 @@ main {
 }
 
 .form-group {
+  font-family: 'Saira Condensed', sans-serif;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: auto;
-  width: 50%;
+  width: 65%;
   text-align: center;
   margin-bottom: 1em;
+}
+
+.form-group button:only-child{
+  margin: 0 auto;
 }
 
 /* .form-group {

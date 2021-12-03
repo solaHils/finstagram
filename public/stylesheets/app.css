@@ -1,6 +1,21 @@
 header {
     background-color: rgb(204, 119, 63);
+    display: flex;
+    justify-content: center;
     color: #E8FDFF;
+}
+
+.header-guide {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+}
+
+.header-guide input{
+    display: flex;
+    border-radius: 5px;
+    height: 30px;
 }
 
 body {
@@ -27,8 +42,8 @@ main {
 
 h1 {
     font-family: 'Patrick Hand', cursive;
-    font-size: 64px;
-    margin: 2px;
+    font-size: 30px;
+    margin: 0 0 10px 0;
 }
 
 a.photo {

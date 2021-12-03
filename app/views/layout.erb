@@ -7,9 +7,22 @@
         <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
         <title>Cutestagram</title>
     </head>
+
     <body>
         <header>
-            <h1>Cutestagram</h1>
+            <div class="header-guide">
+                <h1>Cutestagram</h1>
+                <input type="text" placeholder="search">
+                <div class="login-info">
+                    <% if current_user %>
+                        <%= current_user.username %>
+                        <a href="/logout">Logout</a>
+                    <% else %>
+                        <a href="/login">Login</a>
+                        <a href="/signup">Signup</a>
+                    <% end %>
+                </div>
+            </div>
         </header>
         <main role="main">
             <%= yield %>

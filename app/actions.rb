@@ -34,8 +34,8 @@ get '/login' do
 end
 
 post '/login' do
-    username   = params[:username]
-    password   = params[:password]
+    username = params[:username]
+    password = params[:password]
 
     user = User.find_by(username: username)
 
@@ -51,4 +51,26 @@ end
 get '/logout' do
     session[:user_id] = nil
     redirect to('/')
+end
+
+get '/cutestagram_posts/new' do
+    @cutestagram_post = CutestagramPost.new
+    #why is the above line required cos it is also defined under the post method. get for login doesnt have anything too
+    erb(:"cutestagram_posts/new")
+end
+
+post '/cutestagram_posts' do
+    photo_url = params[:photo_url]
+    @cutestagram_post = CutestagramPost.new({ photo_url: photo_url, user_id: current_user.id })
+    
+    if @cutestagram_post.save
+        redirect(to('/'))
+    else
+        erb(:"cutestagram_posts/new")
+    end
+end
+
+get '/cutestagram_posts/:id' do
+    @cutestagram_post = CutestagramPost.find(params[:id])
+    erb(:"cutestagram_posts/show")
 end

@@ -13,6 +13,10 @@ a {
   text-decoration: none;
 }
 
+h1 a{
+  color: white;
+}
+
 label {
   /* display: block; */
   /* margin-bottom: .25em; */
@@ -66,11 +70,13 @@ main {
 
 .user-info {
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  font-size: 12px;
+  margin-bottom: 10px;
 }
 
 .user-info img {
-  width: 40px;
+  width: 25px;
 }
 
 .user-info h2 {
@@ -127,10 +133,6 @@ main {
 .form-group button:only-child{
   margin: 0 auto;
 }
-
-/* .form-group {
-  margin-bottom: 1em;
-} */
 
 .new-comment input[type="text"] {
   width: 100%;

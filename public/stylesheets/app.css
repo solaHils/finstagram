@@ -53,3 +53,24 @@ a.photo {
 a.photo:hover {
     padding: 10px;
 }
+
+.new-cutestagram-post{
+    display: flex;
+    justify-content: center;
+}
+
+.new-cutestagram-post .button{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    border-radius: 5px;
+    padding: .5em;
+    background-color: #cc773e;
+    border: solid 1px #244751;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,31 @@
+<% if current_user %>
+    <% if like = current_user.likes.find_by({ cutestagram_post_id: cutestagram_post.id }) %>
+        <form action="/likes/<%= like.id%>" method="POST">
+            <input type="hidden" name="_method" value="delete">
+            <button class="like-button" type="submit">
+                <% if cutestagram_post.like_count <= 1 %>
+                    <%= cutestagram_post.like_count %> &nbsp; <img src="/images/like_ico.png" style="width:25px;">
+                <% else %>
+                    <%= cutestagram_post.like_count %> &nbsp; <img src="/images/like_ico.png" style="width:25px;">&apos;s
+                <% end %>
+            </button>
+        </form>
+    <% else %>
+        <form action="/likes" method="POST">
+            <input type="hidden" name="cutestagram_post_id" value="<%= cutestagram_post.id %>">
+            <button class="like-button" type="submit">
+                <% if cutestagram_post.like_count <= 1 %>
+                    <%= cutestagram_post.like_count %> &nbsp; <img src="/images/no_like_icon.png" style="width:25px;">
+                <% else %>
+                    <%= cutestagram_post.like_count %> &nbsp; <img src="/images/no_like_icon.png" style="width:25px;">&apos;s
+                <% end %>
+            </button>
+        </form>
+    <% end %>
+<% else %>
+    <% if cutestagram_post.like_count <= 1 %>
+        <%= cutestagram_post.like_count %> &nbsp; <img src="/images/like_ico.png" style="width:25px;">
+    <% else %>
+        <%= cutestagram_post.like_count %> &nbsp; <img src="/images/like_ico.png" style="width:25px;">&apos;s
+    <% end %>
+<% end %>

@@ -5,5 +5,5 @@
 <% end %>
 
 <% @cutestagram_posts.each do |cutestagram_post| %>
-    <%= erb(:'shared/cutestagram_post', { locals: { cutestagram_post: cutestagram_post }}) %>
+    <%= erb(:'shared/cutestagram_post', { locals: { cutestagram_post: cutestagram_post, allow_new_comment: false }}) %>
 <% end %> 

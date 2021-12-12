@@ -19,9 +19,7 @@ post '/signup' do
     avatar_url = params[:avatar_url]
     username   = params[:username]
     password   = params[:password]
-
     @user = User.new({ email: email, avatar_url: avatar_url, username: username, password: password })
-    
     if @user.save
         redirect to('/login')
     else
@@ -36,9 +34,7 @@ end
 post '/login' do
     username = params[:username]
     password = params[:password]
-
     user = User.find_by(username: username)
-
     if user && user.password == password
         session[:user_id] = user.id
         redirect to('/')
@@ -62,7 +58,6 @@ end
 post '/cutestagram_posts' do
     photo_url = params[:photo_url]
     @cutestagram_post = CutestagramPost.new({ photo_url: photo_url, user_id: current_user.id })
-    
     if @cutestagram_post.save
         redirect(to('/'))
     else
@@ -73,4 +68,25 @@ end
 get '/cutestagram_posts/:id' do
     @cutestagram_post = CutestagramPost.find(params[:id])
     erb(:"cutestagram_posts/show")
+end
+
+post '/comments' do
+    text = params[:text]
+    cutestagram_post_id = params[:cutestagram_post_id]
+    comment = Comment.new({ text: text, cutestagram_post_id: cutestagram_post_id, user_id: current_user.id })
+    comment.save
+    redirect(back)
+end
+
+post '/likes' do
+    cutestagram_post_id = params[:cutestagram_post_id]
+    like = Like.new({ cutestagram_post_id: cutestagram_post_id, user_id: current_user.id })
+    like.save
+    redirect(back)
+end
+
+delete '/likes/:id' do
+    like = Like.find(params[:id])
+    like.destroy
+    redirect(back)
 end

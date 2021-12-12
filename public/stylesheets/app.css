@@ -1,5 +1,5 @@
 header {
-    background-color: rgb(204, 119, 63);
+    background-color: #2E5090;
     display: flex;
     justify-content: center;
     color: #E8FDFF;
@@ -7,9 +7,10 @@ header {
 
 .header-guide {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    width: 50%;
+    width: 450px;
+    padding: 0 10px;
 }
 
 .header-guide input{
@@ -19,7 +20,7 @@ header {
 }
 
 body {
-    background-color: rgb(240, 234, 234);
+    background-color: #dadde3;
     font-family: 'Saira Condensed', sans-serif;
 }
 
@@ -29,7 +30,11 @@ main {
 }
 
 .cutestagram-post {
-    margin-bottom: 48px;
+    border: solid;
+    margin: 10px;
+    border-width: thin;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .cutestagram-post .user-info img {
@@ -37,7 +42,8 @@ main {
 }
 
 .photo-rounded-corner {
-    border-radius: 5%;
+    border-radius: 3%;
+    margin: 10px 0;
 }
 
 h1 {
@@ -67,10 +73,9 @@ a.photo:hover {
     height: 30px;
     border-radius: 5px;
     padding: .5em;
-    background-color: #cc773e;
+    background-color: #2E5090;
     border: solid 1px #244751;
     color: white;
     font-size: 20px;
     cursor: pointer;
   }
-  

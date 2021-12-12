@@ -8,14 +8,23 @@
         <img class="photo-rounded-corner" src="<%= cutestagram_post.photo_url %>" alt="cutestagram post from <%= cutestagram_post.user.username %>">
     </a>
     <div class="actions">
-        <%= cutestagram_post.like_count %> likes
-        <span class="comment-count"><%= cutestagram_post.comment_count %> comments</span>
+        <%= erb(:"shared/likes", { locals: { cutestagram_post: cutestagram_post }}) %>
+        <% if cutestagram_post.comment_count <= 1 %>
+            <span class="comment-count"><%= cutestagram_post.comment_count %> comment</span>
+        <% else %>
+            <span class="comment-count"><%= cutestagram_post.comment_count %> comments</span>
+        <% end %>
+    </div>
+    <div class="actions">
+        <% if current_user && allow_new_comment %>
+            <%= erb(:"shared/new_comment", {locals: {cutestagram_post: cutestagram_post }}) %>
+        <% end %>
     </div>
     <ul class="comments">
         <% cutestagram_post.comments.each do |comment| %>
             <li>
                 <p>
-                    <%= comment.user.username %>: <%= comment.text %>
+                    <span><%= comment.user.username %>:</span> <%= comment.text %>
                 </p>
             </li>
         <% end %>

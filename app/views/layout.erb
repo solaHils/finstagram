@@ -6,19 +6,18 @@
         <link rel="stylesheet" type="text/css" href="/stylesheets/lib.css">
         <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
         <title>Cutestagram</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-
     <body>
         <header>
             <div class="header-guide">
                 <h1>
                     <a href="/">Cutestagram</a>
                 </h1>
-                <input type="text" placeholder="search">
                 <div class="login-info">
                     <% if current_user %>
-                        <%= current_user.username %>
-                        <a href="/logout">Logout</a>
+                        <a href="/logout">Logout</a> &nbsp;
+                        <img style="width:35px; border-radius: 50%;" src="<%= current_user.avatar_url %>">
                     <% else %>
                         <a href="/login">Login</a>
                         <a href="/signup">Signup</a>

@@ -176,4 +176,5 @@ main {
   display: flex;
   align-items: center;
   font-weight: bold;
+  gap: 0.4em;
 }
